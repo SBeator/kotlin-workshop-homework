@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:isScrollContainer="true"
+        tools:context="com.tw.a01catincloud.activity.LoginActivity">
+
+        <ImageView
+            android:layout_marginTop="96dp"
+            android:src="@mipmap/login_head"
+            android:layout_width="231dp"
+            android:layout_height="51dp" />
+
+        <TextView
+            android:text="Cat On Cloud"
+            android:textSize="30sp"
+            android:textColor="@color/colorTitle"
+            android:fontFamily="monospace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/username"
+            android:maxLines="1"
+            android:inputType="text"
+            android:background="@drawable/login_input_bg"
+            android:paddingLeft="@dimen/ui_size_20"
+            android:paddingRight="@dimen/ui_size_20"
+            android:textSize="18sp"
+            android:hint="User Name"
+            android:textColorHint="@color/colorBlueGreen"
+            android:textColor="@color/colorBlueGreenDark"
+            android:layout_marginTop="47dp"
+            android:layout_width="246dp"
+            android:layout_height="40dp" />
+
+        <EditText
+            android:id="@+id/password"
+            android:maxLines="1"
+            android:inputType="textPassword"
+            android:background="@drawable/login_input_bg"
+            android:paddingLeft="@dimen/ui_size_20"
+            android:paddingRight="@dimen/ui_size_20"
+            android:textSize="18sp"
+            android:hint="Password"
+            android:textColorHint="@color/colorBlueGreen"
+            android:textColor="@color/colorBlueGreenDark"
+            android:layout_marginTop="20dp"
+            android:layout_width="246dp"
+            android:layout_height="40dp" />
+
+        <Button
+            android:id="@+id/button_login"
+            android:background="@drawable/login_btn_bg_selector"
+            android:textColor="@color/colorWhite"
+            android:text="Sign In"
+            android:layout_marginTop="20dp"
+            android:layout_width="246dp"
+            android:layout_height="40dp" />
+
+    </LinearLayout>
+
+</ScrollView>
+

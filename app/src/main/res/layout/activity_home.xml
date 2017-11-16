@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tw.a01catincloud.activity.HomeActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ui_size_200">
+        </android.support.v4.view.ViewPager>
+
+        <LinearLayout
+            android:id="@+id/indicator_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="@dimen/ui_size_6"
+            android:layout_gravity="center_horizontal|bottom">
+
+            <ImageView
+                android:layout_marginStart="@dimen/ui_size_6"
+                android:layout_marginLeft="@dimen/ui_size_6"
+                android:background="@drawable/banner_indicator_selected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:layout_marginStart="@dimen/ui_size_6"
+                android:layout_marginLeft="@dimen/ui_size_6"
+                android:background="@drawable/banner_indicator_unselected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_marginStart="@dimen/ui_size_6"
+                android:layout_marginLeft="@dimen/ui_size_6"
+                android:background="@drawable/banner_indicator_unselected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_marginStart="@dimen/ui_size_6"
+                android:layout_marginLeft="@dimen/ui_size_6"
+                android:background="@drawable/banner_indicator_unselected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:paddingVertical="@dimen/ui_size_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/ui_size_20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <CheckBox
+                android:id="@+id/btn_cat_nearby"
+                android:button="@android:color/transparent"
+                android:background="@drawable/left_btn_bg_selector"
+                android:textAlignment="center"
+                android:textColor="@drawable/text_checkbox"
+                android:text="Cats nearby"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:layout_height="40dp" />
+            <CheckBox
+                android:id="@+id/btn_my_cat"
+                android:button="@android:color/transparent"
+                android:textAlignment="center"
+                android:textColor="@drawable/text_checkbox"
+                android:text="My cats"
+                android:layout_marginLeft="-2dp"
+                android:background="@drawable/right_btn_bg_selector"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:layout_height="40dp" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"></LinearLayout>
+
+</LinearLayout>

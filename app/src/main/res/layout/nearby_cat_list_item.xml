@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/ui_size_20">
+
+        <ImageView
+            android:id="@+id/profile"
+            android:layout_marginRight="@dimen/ui_size_10"
+            android:layout_width="@dimen/ui_size_40"
+            android:layout_height="@dimen/ui_size_40"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:paddingLeft="@dimen/ui_size_18"
+            android:src="@mipmap/profile1" />
+        <TextView
+            android:id="@+id/catowner"
+            android:layout_toRightOf="@+id/profile"
+            android:text="Kitty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/time"
+            android:layout_alignParentRight="true"
+            android:text="2 mins ago"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/description"
+            android:layout_alignLeft="@+id/catowner"
+            android:layout_below="@+id/catowner"
+            android:text="Post some pictures"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</LinearLayout>
