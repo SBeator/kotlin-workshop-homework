@@ -56,8 +56,8 @@ class HomeActivity : AppCompatActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun initBanner() {
-        mViewPager = findViewById(R.id.viewpager) as ViewPager
-        mIndicator = findViewById(R.id.indicator_view) as ViewGroup
+        mViewPager = findViewById(R.id.viewpager)
+        mIndicator = findViewById(R.id.indicator_view)
 
         var imageList = ArrayList<ImageView>()
 
@@ -107,8 +107,8 @@ class HomeActivity : AppCompatActivity(), ViewPager.OnPageChangeListener {
     }
 
     private fun setupContent() {
-        mBtnCatNearby = findViewById(R.id.btn_cat_nearby) as CheckBox
-        mBtnMyCat = findViewById(R.id.btn_my_cat) as CheckBox
+        mBtnCatNearby = findViewById(R.id.btn_cat_nearby)
+        mBtnMyCat = findViewById(R.id.btn_my_cat)
 
         nearbyCatFragment = NearbyCatFragment()
         myCatFragment = MyCatFragment()

@@ -24,9 +24,9 @@ class LoginActivity : AppCompatActivity(), LoginContract.View{
 
         Log.d(TAG, "onCreate")
 
-        mBtnLogin = findViewById(R.id.button_login) as Button
-        mEditUsername = findViewById(R.id.username) as EditText
-        mEditPassword = findViewById(R.id.password) as EditText
+        mBtnLogin = findViewById(R.id.button_login)
+        mEditUsername = findViewById(R.id.username)
+        mEditPassword = findViewById(R.id.password)
 
         mBtnLogin.setOnClickListener {
             var username = mEditUsername.text.toString()

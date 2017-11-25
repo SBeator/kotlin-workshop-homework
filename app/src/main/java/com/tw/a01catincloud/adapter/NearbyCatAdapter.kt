@@ -7,14 +7,17 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.tw.a01catincloud.R
+import com.tw.a01catincloud.model.GatNearbyCatResponse
 import com.tw.a01catincloud.presenter.CatsNearby
 import com.tw.a01catincloud.utils.HttpUtils
 
 /**
  * Created by xxzeng on 02/11/2017.
  */
-class NearbyCatAdapter(val context: Context, val data: List<CatsNearby>) : BaseAdapter(){
+//class NearbyCatAdapter(val context: Context, val data: List<CatsNearby>) : BaseAdapter(){
+class NearbyCatAdapter(val context: Context, val data: List<GatNearbyCatResponse.MomentsBean>) : BaseAdapter(){
     val inflater = LayoutInflater.from(context)
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
@@ -35,11 +38,16 @@ class NearbyCatAdapter(val context: Context, val data: List<CatsNearby>) : BaseA
 
 //        var image = HttpUtils().doDownloadImage("http://10.0.2.2:8080/catnip" + cat.avatar.imageUrl)
 
-        view.findViewById<ImageView>(R.id.profile).setImageResource(profile)
-//        view.findViewById<ImageView>(R.id.profile).setImageBitmap(image)
-        view.findViewById<TextView>(R.id.catowner).text = cat.name
-        view.findViewById<TextView>(R.id.description).text = cat.description
-        view.findViewById<TextView>(R.id.time).text = cat.updateTime.toString()
+//        view.findViewById<ImageView>(R.id.profile).setImageResource(profile)
+////        view.findViewById<ImageView>(R.id.profile).setImageBitmap(image)
+//        view.findViewById<TextView>(R.id.catowner).text = cat.name
+//        view.findViewById<TextView>(R.id.description).text = cat.description
+//        view.findViewById<TextView>(R.id.time).text = cat.updateTime.toString()
+
+        view.findViewById<TextView>(R.id.catowner).text = cat.cat
+        view.findViewById<TextView>(R.id.description).text = cat.message
+        view.findViewById<TextView>(R.id.time).text = cat.timestamp
+        Glide.with(context).load("http://10.0.2.2:8080/catnip/" + cat.avatar!!.image).into(view.findViewById(R.id.profile))
 
         return view
     }

@@ -11,6 +11,7 @@ import android.widget.ListView
 import android.widget.Toast
 import com.tw.a01catincloud.R
 import com.tw.a01catincloud.adapter.NearbyCatAdapter
+import com.tw.a01catincloud.model.GatNearbyCatResponse
 import com.tw.a01catincloud.presenter.CatsNearby
 import com.tw.a01catincloud.presenter.CatsNearbyContract
 import com.tw.a01catincloud.presenter.CatsNearbyPresenter
@@ -20,7 +21,6 @@ import com.tw.a01catincloud.presenter.CatsNearbyPresenter
  */
 
 class NearbyCatFragment : Fragment(), CatsNearbyContract.View, AdapterView.OnItemClickListener {
-
     private var TAG = "NearbyCatFragment"
     private lateinit var mListView: ListView
     private lateinit var mPresenter: CatsNearbyContract.Presenter
@@ -38,8 +38,8 @@ class NearbyCatFragment : Fragment(), CatsNearbyContract.View, AdapterView.OnIte
     }
 
     private fun setupCarousel() {
-        mPresenter = CatsNearbyPresenter(this)
-        mPresenter.start()
+//        mPresenter = CatsNearbyPresenter(this)
+//        mPresenter.start()
     }
 
     override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
@@ -52,12 +52,29 @@ class NearbyCatFragment : Fragment(), CatsNearbyContract.View, AdapterView.OnIte
     }
 
     override fun showNearbyCats(catsNearby: List<CatsNearby>) {
-        mListView.adapter = NearbyCatAdapter(activity, catsNearby)
-        mListView.onItemClickListener = this
+//        mListView.adapter = NearbyCatAdapter(activity, catsNearby)
+//        mListView.onItemClickListener = this
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onResume() {
+        super.onResume()
+        mPresenter = CatsNearbyPresenter(this)
+        mPresenter.start()
+    }
+
+    override fun onStop() {
+        super.onStop()
         mPresenter.stop()
+    }
+
+
+    override fun onGetDataFail(msg: String) {
+        Toast.makeText(context, "get data failed!\n" + msg, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onGetDataSucceed(catsNearby: List<GatNearbyCatResponse.MomentsBean>) {
+        Toast.makeText(context, "get data success!", Toast.LENGTH_SHORT).show()
+
+        mListView.adapter = NearbyCatAdapter(activity, catsNearby)
     }
 }
