@@ -1,5 +1,6 @@
 package com.tw.a01catincloud.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.util.Log
@@ -10,6 +11,8 @@ import android.widget.AdapterView
 import android.widget.ListView
 import android.widget.Toast
 import com.tw.a01catincloud.R
+import com.tw.a01catincloud.activity.HomeActivity
+import com.tw.a01catincloud.activity.SingleCatActivity
 import com.tw.a01catincloud.adapter.NearbyCatAdapter
 import com.tw.a01catincloud.model.GatNearbyCatResponse
 import com.tw.a01catincloud.presenter.CatsNearby
@@ -43,7 +46,11 @@ class NearbyCatFragment : Fragment(), CatsNearbyContract.View, AdapterView.OnIte
     }
 
     override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-        Toast.makeText(activity, "item clicked", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(activity, "item clicked", Toast.LENGTH_SHORT).show()
+
+        var intent = Intent(context, SingleCatActivity::class.java)
+        intent.putExtra(SingleCatActivity.CAT_ID_STRING, "cat1")
+        startActivity(intent)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -76,5 +83,6 @@ class NearbyCatFragment : Fragment(), CatsNearbyContract.View, AdapterView.OnIte
 //        Toast.makeText(context, "get data success!", Toast.LENGTH_SHORT).show()
 
         mListView.adapter = NearbyCatAdapter(activity, catsNearby)
+        mListView.onItemClickListener = this
     }
 }

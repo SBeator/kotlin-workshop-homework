@@ -1,6 +1,7 @@
 package com.tw.a01catincloud.network
 
 import com.tw.a01catincloud.model.GatNearbyCatResponse
+import com.tw.a01catincloud.model.GetSingleCatResponse
 import rx.Subscriber
 
 /**
@@ -8,5 +9,6 @@ import rx.Subscriber
  */
 
 interface HttpManager {
-    fun getCat(callback: Subscriber<GatNearbyCatResponse>)
+    fun getNearbyCat(callback: Subscriber<GatNearbyCatResponse>)
+    fun getSingleCat(id: String, callback: Subscriber<GetSingleCatResponse>)
 }

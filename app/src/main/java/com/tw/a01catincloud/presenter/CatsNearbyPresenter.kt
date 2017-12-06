@@ -1,13 +1,7 @@
 package com.tw.a01catincloud.presenter
 
-import android.os.AsyncTask
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
-import com.google.gson.reflect.TypeToken
 import com.tw.a01catincloud.model.GatNearbyCatResponse
 import com.tw.a01catincloud.network.HttpsManagerFactory
-import com.tw.a01catincloud.utils.HttpUtils
-import org.json.JSONObject
 import rx.Subscriber
 
 /**
@@ -17,7 +11,7 @@ import rx.Subscriber
 class CatsNearbyPresenter(private val mCatsNearbyView: CatsNearbyContract.View):
         CatsNearbyContract.Presenter {
     override fun start() {
-        HttpsManagerFactory.getMeetingHttpManager().getCat(object: Subscriber<GatNearbyCatResponse>() {
+        HttpsManagerFactory.getMeetingHttpManager().getNearbyCat(object: Subscriber<GatNearbyCatResponse>() {
             override fun onNext(response: GatNearbyCatResponse?) {
                 mCatsNearbyView.onGetDataSucceed(response!!.moments!!)
             }

@@ -8,7 +8,7 @@
         android:textAlignment="center"
         android:layout_gravity="center_vertical"
         android:paddingHorizontal="@dimen/ui_size_20"
-        android:text="Sorry, you have no cat.\nWant to adopt one from the cloud? Find it from cats nearby."
+        android:text="Sorry, you have no cat.\n\nWant to adopt one from the cloud? Find it from cats nearby."
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

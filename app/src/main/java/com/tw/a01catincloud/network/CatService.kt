@@ -1,10 +1,12 @@
 package com.tw.a01catincloud.network
 
 import com.tw.a01catincloud.model.GatNearbyCatResponse
+import com.tw.a01catincloud.model.GetSingleCatResponse
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 import rx.Observable
 
 /**
@@ -14,6 +16,9 @@ import rx.Observable
 interface CatService {
     @GET("catnip/moment/")
     fun getNearbyCat(): Observable<GatNearbyCatResponse>
+
+    @GET("catnip/moment/{id}")
+    fun getSingleCat(@Path("id") id: String): Observable<GetSingleCatResponse>
 
     companion object {
         fun getCatService(): CatService {
