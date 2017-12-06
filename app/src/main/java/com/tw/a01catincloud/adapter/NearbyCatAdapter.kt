@@ -20,6 +20,7 @@ import com.tw.a01catincloud.utils.ImageUtils
 //class NearbyCatAdapter(val context: Context, val data: List<CatsNearby>) : BaseAdapter(){
 class NearbyCatAdapter(val context: Context, val data: List<GatNearbyCatResponse.MomentsBean>) : BaseAdapter(){
     val inflater = LayoutInflater.from(context)
+    val imageUtils = ImageUtils()
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
@@ -48,9 +49,8 @@ class NearbyCatAdapter(val context: Context, val data: List<GatNearbyCatResponse
         view.findViewById<TextView>(R.id.catowner).text = cat.cat
         view.findViewById<TextView>(R.id.description).text = cat.message
         view.findViewById<TextView>(R.id.time).text = cat.timestamp
-//        Glide.with(context).load("http://10.0.2.2:8080/catnip/" + cat.avatar!!.image).into(view.findViewById(R.id.profile))
 
-        ImageUtils().showImage(context, cat.avatar!!.image!!, view.findViewById(R.id.profile))
+        imageUtils.showImage(context, cat.avatar!!.image!!, view.findViewById(R.id.profile))
 
         val thumbsImageViews = listOf<ImageView>(
                 view.findViewById(R.id.cat_thumb1),
@@ -60,7 +60,7 @@ class NearbyCatAdapter(val context: Context, val data: List<GatNearbyCatResponse
         for (i in 0..2) {
             if (i < cat.thumbs!!.size) {
                 thumbsImageViews[i].visibility = View.VISIBLE
-                ImageUtils().showImage(context, cat.thumbs!![i].image!!, thumbsImageViews[i])
+                imageUtils.showImage(context, cat.thumbs!![i].image!!, thumbsImageViews[i])
             } else {
                 thumbsImageViews[i].visibility = View.INVISIBLE
             }
