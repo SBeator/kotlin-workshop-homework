@@ -37,5 +37,32 @@
             android:text="Post some pictures"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/cat_thumb1"
+            android:layout_marginTop="@dimen/ui_size_10"
+            android:layout_alignLeft="@+id/catowner"
+            android:layout_below="@+id/description"
+            android:layout_width="@dimen/ui_size_80"
+            android:layout_height="@dimen/ui_size_80"
+            android:src="@mipmap/profile1" />
+        <ImageView
+            android:id="@+id/cat_thumb2"
+            android:layout_marginTop="@dimen/ui_size_10"
+            android:layout_marginLeft="@dimen/ui_size_10"
+            android:layout_toRightOf="@+id/cat_thumb1"
+            android:layout_below="@+id/description"
+            android:layout_width="@dimen/ui_size_80"
+            android:layout_height="@dimen/ui_size_80"
+            android:src="@mipmap/profile1" />
+        <ImageView
+            android:id="@+id/cat_thumb3"
+            android:layout_marginTop="@dimen/ui_size_10"
+            android:layout_marginLeft="@dimen/ui_size_10"
+            android:layout_toRightOf="@+id/cat_thumb2"
+            android:layout_below="@+id/description"
+            android:layout_width="@dimen/ui_size_80"
+            android:layout_height="@dimen/ui_size_80"
+            android:src="@mipmap/profile1" />
     </RelativeLayout>
 </LinearLayout>

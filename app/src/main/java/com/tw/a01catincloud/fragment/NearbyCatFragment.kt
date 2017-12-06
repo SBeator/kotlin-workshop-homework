@@ -73,7 +73,7 @@ class NearbyCatFragment : Fragment(), CatsNearbyContract.View, AdapterView.OnIte
     }
 
     override fun onGetDataSucceed(catsNearby: List<GatNearbyCatResponse.MomentsBean>) {
-        Toast.makeText(context, "get data success!", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(context, "get data success!", Toast.LENGTH_SHORT).show()
 
         mListView.adapter = NearbyCatAdapter(activity, catsNearby)
     }

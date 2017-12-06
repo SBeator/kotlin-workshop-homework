@@ -8,4 +8,6 @@
     <dimen name="ui_size_40">40dp</dimen>
     <dimen name="ui_size_18">18dp</dimen>
     <dimen name="ui_size_13">13dp</dimen>
+    <dimen name="ui_size_80">80dp</dimen>
+
 </resources>
