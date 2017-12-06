@@ -11,6 +11,7 @@ interface LoginContract {
     }
 
     interface View {
-        fun loginSuccess()
+        fun loginSuccess(key: String)
+        fun loginFailure(message: String?)
     }
 }

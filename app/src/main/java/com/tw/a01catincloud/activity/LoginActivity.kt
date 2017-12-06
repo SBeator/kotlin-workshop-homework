@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import com.tw.a01catincloud.R
 import com.tw.a01catincloud.presenter.LoginContract
 import com.tw.a01catincloud.presenter.LoginPresenter
@@ -37,10 +38,15 @@ class LoginActivity : AppCompatActivity(), LoginContract.View{
         }
     }
 
-    override fun loginSuccess() {
+    override fun loginSuccess(key: String) {
         Log.d(TAG, "login success")
         startActivity(Intent(this, HomeActivity::class.java))
         finish()
+    }
+
+    override fun loginFailure(message: String?) {
+        Toast.makeText(this, "Login fail!\n" + message, Toast.LENGTH_SHORT).show()
+
     }
 
     override fun onResume() {
