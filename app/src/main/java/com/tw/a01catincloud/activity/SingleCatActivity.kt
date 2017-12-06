@@ -52,7 +52,7 @@ class SingleCatActivity: AppCompatActivity(), SingleCatContract.View {
         imageUtils.showImage(this, data.avatar!!.image!!, this.findViewById(R.id.avatar))
 
         this.findViewById<TextView>(R.id.message).text = data.message
-        this.findViewById<TextView>(R.id.description).text = data.age.toString() + " | " + data.kind
+        this.findViewById<TextView>(R.id.description).text = data.age.toString() + " years old | " + data.kind
         this.findViewById<TextView>(R.id.star).text = data.stars.toString() + " Stars"
         this.findViewById<TextView>(R.id.follows).text = data.follows.toString() + " Follows"
         this.findViewById<TextView>(R.id.fishes).text = data.fishes.toString() + " Fishes"
